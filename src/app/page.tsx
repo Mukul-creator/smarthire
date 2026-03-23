@@ -1,65 +1,105 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="flex min-h-screen items-center justify-center px-6 py-16">
+      <section className="w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/60 bg-white/80 shadow-[0_30px_120px_rgba(15,23,42,0.12)] backdrop-blur">
+        <div className="grid gap-10 px-8 py-10 md:grid-cols-[1.15fr_0.85fr] md:px-12 md:py-14">
+          <div className="space-y-8">
+            <div className="inline-flex rounded-full border border-cyan-950/10 bg-cyan-950 px-4 py-1 text-sm font-medium tracking-[0.24em] text-cyan-50 uppercase">
+              smartHire
+            </div>
+            <div className="space-y-5">
+              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+                AI interviews that feel structured, fast, and recruiter-ready.
+              </h1>
+              <p className="max-w-xl text-lg leading-8 text-slate-600">
+                Launch a text-based interviewer that screens candidates,
+                adapts follow-up questions, and produces consistent evaluation
+                notes for hiring teams.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <button className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                Build Interview Flow
+              </button>
+              <button className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-950 hover:text-slate-950">
+                View Candidate Journey
+              </button>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p className="text-sm text-slate-500">Interview mode</p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">
+                  Text-first
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p className="text-sm text-slate-500">Signal quality</p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">
+                  Adaptive follow-ups
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p className="text-sm text-slate-500">Hiring output</p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">
+                  Structured summaries
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[1.75rem] bg-slate-950 p-6 text-slate-50">
+            <div className="mb-6 flex items-center justify-between">
+              <div>
+                <p className="text-sm text-slate-400">Live interview preview</p>
+                <h2 className="text-xl font-semibold">Frontend Engineer</h2>
+              </div>
+              <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-300">
+                Session Active
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              <div className="max-w-[85%] rounded-2xl rounded-tl-md bg-white/8 p-4">
+                <p className="text-sm text-slate-300">smartHire</p>
+                <p className="mt-2 text-sm leading-7 text-slate-100">
+                  Describe a system you built where performance issues only
+                  appeared under production traffic. How did you isolate the
+                  cause?
+                </p>
+              </div>
+
+              <div className="ml-auto max-w-[85%] rounded-2xl rounded-tr-md bg-cyan-400 p-4 text-slate-950">
+                <p className="text-sm font-medium">Candidate</p>
+                <p className="mt-2 text-sm leading-7">
+                  I started with tracing and query timing, then compared real
+                  user traffic patterns against staging. The issue came from a
+                  cache invalidation path that only triggered with burst writes.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 p-4">
+                <p className="text-xs tracking-[0.2em] text-slate-400 uppercase">
+                  Evaluation snapshot
+                </p>
+                <div className="mt-4 grid gap-3 text-sm text-slate-200">
+                  <div className="flex items-center justify-between rounded-xl bg-white/6 px-4 py-3">
+                    <span>Problem diagnosis</span>
+                    <span className="font-semibold text-emerald-300">Strong</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-xl bg-white/6 px-4 py-3">
+                    <span>System thinking</span>
+                    <span className="font-semibold text-amber-300">Promising</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-xl bg-white/6 px-4 py-3">
+                    <span>Communication clarity</span>
+                    <span className="font-semibold text-cyan-300">High</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
